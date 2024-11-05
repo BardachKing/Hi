@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Menu with Div Display</title>
+    <style>
+        /* Menu styling */
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .menu button {
+            background-color: #4CAF50; /* Green color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .menu button:hover {
+            background-color: #45a049;
+        }
+        
+        /* Content div styling */
+        .content {
+            display: none; /* Hide all content divs by default */
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Button Menu -->
+<div class="menu">
+    <button onclick="showContent('home')">Home</button>
+    <button onclick="showContent('about')">About</button>
+    <button onclick="showContent('services')">Services</button>
+    <button onclick="showContent('contact')">Contact</button>
+</div>
+
+<!-- Content Divs -->
+<div id="home" class="content">
+    <h2>Home</h2>
+    <p>Welcome to the home page!</p>
+</div>
+
+<div id="about" class="content">
+    <h2>About</h2>
+    <p>Learn more about us on this page.</p>
+</div>
+
+<div id="services" class="content">
+    <h2>Services</h2>
+    <p>These are the services we offer.</p>
+</div>
+
+<div id="contact" class="content">
+    <h2>Contact</h2>
+    <p>Get in touch with us here.</p>
+</div>
+
+<script>
+    // Function to show the clicked content and hide others
+    function showContent(id) {
+        // Hide all content divs
+        const contents = document.querySelectorAll('.content');
+        contents.forEach(content => content.style.display = 'none');
+        
+        // Show the clicked content div
+        document.getElementById(id).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
